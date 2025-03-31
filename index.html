@@ -1,254 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Polytrack - Exciting 3D Racing Game | Play Online Free</title>
-  <meta name="description" content="Play Polytrack online - an exhilarating 3D racing game where you navigate through challenging tracks with stunning low-poly graphics. Test your racing skills now!">
-  <link rel="canonical" href="https://polytrack.com">
-  <style>
-      :root {
-          /* Apple-inspired color palette */
-          --primary: #007AFF;
-          --secondary: #5AC8FA;
-          --background: #F2F2F7;
-          --dark-background: #1C1C1E;
-          --text: #000000;
-          --light-text: #8E8E93;
-          --accent: #FF2D55;
-          --success: #34C759;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolyTrack - Fast-Paced 3D Racing Game | Play Online Now</title>
+    <meta name="description" content="Play PolyTrack online - an exhilarating 3D racing game where you navigate through challenging tracks with precision and speed. Test your skills now!">
+    <link rel="canonical" href="https://polytrack.com">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="PolyTrack - Fast-Paced 3D Racing Game">
+    <meta property="og:description" content="Navigate through challenging 3D tracks with precision and speed in this addictive racing game.">
+    <meta property="og:url" content="https://polytrack.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://polytrack.com/images/polytrack-preview.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RL8HQJY81B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RL8HQJY81B');
+    </script>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0071e3',
+              secondary: '#86c1fd',
+              accent: '#34c759',
+              background: '#f5f5f7',
+              dark: '#1d1d1f',
+              light: '#ffffff'
+            }
+          }
+        }
       }
-      
-      * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      }
-      
+    </script>
+    
+    <style>
       body {
-          background-color: var(--background);
-          color: var(--text);
-          line-height: 1.6;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       }
-      
-      header {
-          background-color: var(--primary);
-          color: white;
-          padding: 1rem;
-          text-align: center;
-      }
-      
-      .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 1rem;
-      }
-      
-      h1 {
-          font-size: 2.5rem;
-          margin-bottom: 1rem;
-          color: var(--primary);
-          text-align: center;
-          padding: 1rem 0;
-      }
-      
-      h2 {
-          font-size: 1.8rem;
-          margin: 1.5rem 0 1rem;
-          color: var(--text);
-          border-bottom: 2px solid var(--secondary);
-          padding-bottom: 0.5rem;
-      }
-      
-      p {
-          margin-bottom: 1rem;
-          font-size: 1.1rem;
-      }
-      
-      .game-intro {
-          background-color: white;
-          border-radius: 10px;
-          padding: 1.5rem;
-          margin-bottom: 2rem;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-      
-      .tagline {
-          font-size: 1.3rem;
-          color: var(--accent);
-          text-align: center;
-          margin-bottom: 2rem;
-          font-weight: 500;
-      }
-      
       .game-container {
-          background-color: white;
-          border-radius: 10px;
-          padding: 1rem;
-          margin-bottom: 2rem;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          position: relative;
-          overflow: hidden;
-          height: 0;
-          padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        aspect-ratio: 16/9;
+        max-height: 80vh;
       }
-      
-      .game-container iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border: none;
-      }
-      
-      .features {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 1.5rem;
-          margin: 2rem 0;
-      }
-      
-      .feature-card {
-          background-color: white;
-          border-radius: 10px;
-          padding: 1.5rem;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          transition: transform 0.3s ease;
-      }
-      
-      .feature-card:hover {
-          transform: translateY(-5px);
-      }
-      
-      .feature-card h3 {
-          color: var(--primary);
-          margin-bottom: 0.5rem;
-          font-size: 1.3rem;
-      }
-      
-      .cta-button {
-          display: inline-block;
-          background-color: var(--accent);
-          color: white;
-          padding: 0.8rem 1.5rem;
-          border-radius: 50px;
-          text-decoration: none;
-          font-weight: bold;
-          margin-top: 1rem;
-          transition: background-color 0.3s ease;
-      }
-      
-      .cta-button:hover {
-          background-color: #FF0A36;
-      }
-      
-      footer {
-          background-color: var(--dark-background);
-          color: white;
-          text-align: center;
-          padding: 1.5rem;
-          margin-top: 2rem;
-      }
-      
-      /* Responsive design */
       @media (max-width: 768px) {
-          h1 {
-              font-size: 2rem;
-          }
-          
-          h2 {
-              font-size: 1.5rem;
-          }
-          
-          .tagline {
-              font-size: 1.1rem;
-          }
-          
-          .container {
-              padding: 0.8rem;
-          }
-          
-          .features {
-              grid-template-columns: 1fr;
-          }
+        .game-container {
+          aspect-ratio: 4/3;
+          height: 70vh;
+        }
       }
-  </style>
+      .gradient-bg {
+        background: linear-gradient(135deg, #0071e3 0%, #34c759 100%);
+      }
+      .shadow-custom {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+    </style>
 </head>
-<body>
-  <header>
-      <div class="container">
-          <nav>
-              <strong>Polytrack.com</strong>
-          </nav>
-      </div>
-  </header>
-  
-  <main class="container">
-      <section class="game-intro">
-          <h1>Polytrack</h1>
-          <p class="tagline">Experience the thrill of low-poly racing in this stunning 3D track challenge!</p>
-          
-          <div class="game-container">
-              <iframe src="https://www.crazygames.com/embed/polytrack" frameborder="0" allow="gamepad *;"></iframe>
-          </div>
-          
-          <div class="text-center">
-              <a href="#play" class="cta-button">Play Now!</a>
-          </div>
-      </section>
-      
-      <section>
-          <h2>Game Overview</h2>
-          <p>Polytrack is an exciting 3D racing game that combines stunning low-poly graphics with challenging gameplay. Navigate through intricate tracks, master tight corners, and compete for the best times in this addictive racing experience.</p>
-          
-          <p>With its unique visual style and precise controls, Polytrack offers a fresh take on the racing genre that will keep you coming back for more. Challenge yourself to improve your times and discover all the tracks!</p>
-      </section>
-      
-      <section>
-          <h2>Key Features</h2>
-          <div class="features">
-              <div class="feature-card">
-                  <h3>Beautiful Low-Poly Graphics</h3>
-                  <p>Immerse yourself in a visually striking world with modern low-poly aesthetics.</p>
-              </div>
-              
-              <div class="feature-card">
-                  <h3>Multiple Challenging Tracks</h3>
-                  <p>Test your skills on various tracks, each with unique layouts and obstacles.</p>
-              </div>
-              
-              <div class="feature-card">
-                  <h3>Precise Controls</h3>
-                  <p>Experience responsive and accurate controls that make racing both challenging and rewarding.</p>
-              </div>
-          </div>
-      </section>
-      
-      <section>
-          <h2>How to Play</h2>
-          <p>Use your arrow keys or WASD to control your vehicle. Master the art of braking and acceleration to achieve the best times. Learn each track's unique characteristics and find the optimal racing line to set new records.</p>
-          
-          <p>The game features intuitive controls that are easy to learn but challenging to master. Practice makes perfect - keep trying to improve your lap times and racing techniques!</p>
-      </section>
-      
-      <section>
-          <h2>Racing Tips</h2>
-          <ul style="margin-left: 2rem; margin-bottom: 1rem;">
-              <li>Brake early for sharp turns</li>
-              <li>Use the racing line to maintain speed</li>
-              <li>Look ahead to anticipate upcoming corners</li>
-              <li>Practice each track to learn its quirks</li>
-              <li>Start slow and gradually increase your speed</li>
-          </ul>
-      </section>
-  </main>
-  
-  <footer>
-      <div class="container">
-          <p>&copy; 2025 Polytrack. All rights reserved.</p>
-      </div>
-  </footer>
+<body class="bg-background text-dark">
+    <header class="gradient-bg text-white py-6 px-4 md:px-8">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <img src="https://via.placeholder.com/50" alt="PolyTrack Logo" class="h-10 w-10 mr-3">
+                <span class="text-2xl font-bold">PolyTrack</span>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#play" class="hover:text-secondary transition-colors">Play Now</a></li>
+                    <li><a href="#about" class="hover:text-secondary transition-colors">About</a></li>
+                    <li><a href="#controls" class="hover:text-secondary transition-colors">Controls</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container mx-auto px-4 md:px-8 py-8">
+        <section class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">PolyTrack: Master the Track in 3D</h1>
+            <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">Navigate through challenging geometric tracks with precision and speed in this addictive 3D racing experience.</p>
+        </section>
+        
+        <section id="play" class="mb-16">
+            <div class="bg-light rounded-xl shadow-custom p-4 md:p-6">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Play PolyTrack Online</h2>
+                <div class="game-container w-full mx-auto bg-black rounded-lg overflow-hidden">
+                    <iframe src="https://www.crazygames.com/embed/polytrack" style="width: 100%; height: 100%;" frameborder="0" allow="gamepad *;"></iframe>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="mb-16">
+            <div class="bg-light rounded-xl shadow-custom p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">About PolyTrack</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="mb-4">PolyTrack is an exhilarating 3D racing game that challenges players to navigate through increasingly difficult tracks made of colorful geometric shapes. With its minimalist design and intuitive controls, PolyTrack offers a perfect balance of accessibility and challenge.</p>
+                        <p class="mb-4">The game features procedurally generated tracks that ensure a unique experience every time you play. As you progress, the tracks become more complex and the speed increases, testing your reflexes and precision to the limit.</p>
+                        <p>Whether you're looking for a quick gaming session or aiming to top the leaderboards, PolyTrack delivers an addictive racing experience that will keep you coming back for more.</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-3">Game Features</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Procedurally generated 3D tracks</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Progressive difficulty system</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Minimalist geometric design</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Intuitive controls for all skill levels</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Global leaderboards</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Gamepad support for enhanced control</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="controls" class="mb-16">
+            <div class="bg-light rounded-xl shadow-custom p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Game Controls</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-100 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-3">Keyboard Controls</h3>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between">
+                                <span class="font-medium">Arrow Keys / WASD</span>
+                                <span>Steer your vehicle</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-medium">Space</span>
+                                <span>Brake / Reverse</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-medium">Shift</span>
+                                <span>Boost (when available)</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-medium">R</span>
+                                <span>Restart current track</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-medium">P</span>
+                                <span>Pause game</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-3">Gamepad Controls</h3>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between">
+                                <span class="font-medium">Left Stick / D-Pad</span>
+                                <span>Steer your vehicle</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-medium">A / X Button</span>
+                                <span>Accelerate</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-medium">B / Circle Button</span>
+                                <span>Brake / Reverse</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-medium">Y / Triangle Button</span>
+                                <span>Boost (when available)</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-medium">Start Button</span>
+                                <span>Pause game</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mb-16">
+            <div class="bg-light rounded-xl shadow-custom p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Tips & Strategies</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-100 rounded-lg p-5">
+                        <h3 class="text-xl font-bold mb-2">Master the Corners</h3>
+                        <p>Slow down before entering tight turns and accelerate as you exit for optimal racing lines.</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-5">
+                        <h3 class="text-xl font-bold mb-2">Use the Environment</h3>
+                        <p>Look for shortcuts and bounce opportunities that can give you an edge on complex tracks.</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-5">
+                        <h3 class="text-xl font-bold mb-2">Practice Makes Perfect</h3>
+                        <p>Each track has its own rhythm - take time to learn the patterns for consistent performance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="bg-primary text-white rounded-xl shadow-custom p-6 md:p-8 text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Ready to Race?</h2>
+                <p class="text-lg mb-6 max-w-2xl mx-auto">Challenge yourself with PolyTrack's addictive gameplay and see if you can master the most difficult tracks!</p>
+                <a href="#play" class="inline-block bg-white text-primary font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition-colors">Play Now</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-dark text-white py-8 px-4 md:px-8 mt-16">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">PolyTrack</h3>
+                    <p>A fast-paced 3D racing game that challenges your reflexes and precision.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#play" class="hover:text-secondary transition-colors">Play Game</a></li>
+                        <li><a href="#about" class="hover:text-secondary transition-colors">About</a></li>
+                        <li><a href="#controls" class="hover:text-secondary transition-colors">Controls</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-secondary transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="#" class="hover:text-secondary transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                        </a>
+                        <a href="#" class="hover:text-secondary transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
+                <p>&copy; 2025 PolyTrack. All rights reserved. <a href="#" class="hover:text-secondary transition-colors">Privacy Policy</a> | <a href="#" class="hover:text-secondary transition-colors">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
